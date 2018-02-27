@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NoonUdacityGoogleProjects</string>
+    <string name="app_name">Hello Android</string>
+    <string name="subject_name">Udacity</string>
+    <string name="subject_web_address">www.udacity.com</string>
+    <string name="subject_phone">650-555-5555</string>
+    <string name="subject_address">2465 Latham St, Mountain View, CA 94043</string>
 </resources>
