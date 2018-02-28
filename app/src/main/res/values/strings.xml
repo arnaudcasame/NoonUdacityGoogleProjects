@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">NoonUdacityGoogleProjects</string>
+    <string name="app_name">Soccer Counter</string>
+    <string name="team_away">Away</string>
+    <string name="team_home">Home</string>
+    <string name="goal_btn_text">Goal</string>
+    <string name="shot_on_goal_action_btn">Shot on Goal</string>
+    <string name="corner_kick_action_btn">Corner Kick</string>
+    <string name="off_side_action_btn">Off Side</string>
+    <string name="reset_action_btn">reset</string>
 </resources>
+
