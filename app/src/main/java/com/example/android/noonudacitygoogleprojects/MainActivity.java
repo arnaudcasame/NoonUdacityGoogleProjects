@@ -1,5 +1,6 @@
 package com.example.android.noonudacitygoogleprojects;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -41,6 +42,27 @@ public class MainActivity extends AppCompatActivity {
         displayAccessoriesTeamB(shotsOnGoalB, offSideB, cornerKickB);
     }
 
+
+    /**
+     * This function manages the screen configuration when the screen
+     * orientation changes
+     * @param newConfig new configuration of the screen
+     */
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            // Do nothing
+        }else {
+            // Do nothing
+        }
+    }
+
+    /**
+     * This method processes any of the stats by adding 1 to the
+     * right stat
+     * @param view the part of the global view that was pressed
+     */
     public void addPoints(View view){
         // Stores the clicked button id into the whichOne variable
         int whichOne = view.getId();
@@ -107,6 +129,11 @@ public class MainActivity extends AppCompatActivity {
         displayScoreTeamB(teamB);
     }
 
+    /**
+     * This method reset all the views display to Zero
+     * @param view the reset button of the global that was pressed
+     */
+
     public void resetScores(View view){
         // Initializes both teams scores to zero
         teamA = 0; teamB = 0;
@@ -127,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Displays the given score for Team A.
+     * @param score this Team A score to be displayed
      */
     public void displayScoreTeamA(int score) {
         // Initializes and Declares scoreView to the Team A score view
@@ -140,32 +168,15 @@ public class MainActivity extends AppCompatActivity {
         // Calling the requestLayout() solves this problem by
         // measuring, laying out, and drawing the View as appropriate
         scoreView.requestLayout();
-
-//        EditText editText;
-//        editText.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                s.toString()
-//            }
-//        });
     }
 
     /**
      * Displays the given score for Team B.
+     * @param score this Team B score to be displayed
      */
     public void displayScoreTeamB(int score) {
         // Initializes and Declares scoreView to the Team A score view
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        TextView scoreView = findViewById(R.id.team_b_score);
         // Sets the scoreView text attribute to the team A current score
         scoreView.setText(String.valueOf(score));
         // When the score reaches ten (10) or higher, the scoreView's size
@@ -179,40 +190,46 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Displays the given other soccer stats for Team A.
+     * @param sog this Team A shot on goal to be displayed
+     * @param os this Team A offside to be displayed
+     * @param ck this Team A corner kick to be displayed
      */
     public void displayAccessoriesTeamA(int sog, int os, int ck){
         // Initializes and Declares shotsView to the Team A shot on goal View
-        TextView shotsView = (TextView) findViewById(R.id.shot_on_goal_a);
+        TextView shotsView = findViewById(R.id.shot_on_goal_a);
         // Sets the shotsView text attribute to the team A current shot on goal amount
         shotsView.setText(String.valueOf(sog));
 
         // Initializes and Declares offsideView to the Team A offside View
-        TextView offsideView = (TextView) findViewById(R.id.off_side_a);
+        TextView offsideView = findViewById(R.id.off_side_a);
         // Sets the offsideView text attribute to the team A current offside amount
         offsideView.setText(String.valueOf(os));
 
         // Initializes and Declares cornerView to the Team A corner kick View
-        TextView cornerView = (TextView) findViewById(R.id.corner_kick_a);
+        TextView cornerView = findViewById(R.id.corner_kick_a);
         // Sets the cornerView text attribute to the team A current corner kick amount
         cornerView.setText(String.valueOf(ck));
     }
 
     /**
      * Displays the given other soccer stats for Team B.
+     * @param sog this Team B shot on goal to be displayed
+     * @param os this Team B offside to be displayed
+     * @param ck this Team B corner kick to be displayed
      */
     public void displayAccessoriesTeamB(int sog, int os, int ck){
         // Initializes and Declares shotsView to the Team B shot on goal View
-        TextView shotsView = (TextView) findViewById(R.id.shot_on_goal_b);
+        TextView shotsView = findViewById(R.id.shot_on_goal_b);
         // Sets the shotsView text attribute to the team B current shot on goal amount
         shotsView.setText(String.valueOf(sog));
 
         // Initializes and Declares offsideView to the Team B offside View
-        TextView offsideView = (TextView) findViewById(R.id.off_side_b);
+        TextView offsideView = findViewById(R.id.off_side_b);
         // Sets the offsideView text attribute to the team B current offside amount
         offsideView.setText(String.valueOf(os));
 
         // Initializes and Declares cornerView to the Team B corner kick View
-        TextView cornerView = (TextView) findViewById(R.id.corner_kick_b);
+        TextView cornerView = findViewById(R.id.corner_kick_b);
         // Sets the cornerView text attribute to the team B current corner kick amount
         cornerView.setText(String.valueOf(ck));
     }
